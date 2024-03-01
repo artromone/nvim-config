@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Neovide
+Exec=cd ~/programming && neovide
+Icon=/opt/nvim-linux64/bin/neovide.png
+Type=Application
+Categories=Development;
