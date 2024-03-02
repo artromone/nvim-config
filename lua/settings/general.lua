@@ -6,18 +6,19 @@ vim.loader.enable()                -- Use Lua
 
 -- Appearance settings
 local appearance = {
-    colorcolumn = '80',            -- Characters divider
+    colorcolumn = '120',           -- Characters divider
     cursorline = true,             -- Highlight the line with the cursor
     number = true,                 -- Enable line numbers
     relativenumber = false,        -- Disable relative line numbers
     so = 999,                      -- Keep cursor always centered
     showmode = false,              -- No things like --INSERT-- anymore
-    timeoutlen = 1000              -- Time to wait for a mapped sequence to complete (in milliseconds)
+    timeoutlen = 1000,             -- Time to wait for a mapped sequence to complete (in milliseconds)
+    wrap = false,                  -- No wrap
 }
 
 -- Language and spelling settings
 local language = {
-    spelllang = { 'en_us' }        -- Spelling dictionaries for English and Russian
+    spelllang = { 'en_us' },       -- Spelling dictionaries for English and Russian
 }
 
 -- Tab and indent settings
@@ -25,20 +26,20 @@ local tab_settings = {
     expandtab = true,              -- Use spaces instead of tabs
     smartindent = true,            -- Auto-indent new lines
     shiftwidth = 4,                -- Shift 4 spaces when pressing tab
-    tabstop = 4                    -- 1 tab == 4 spaces
+    tabstop = 4,                   -- 1 tab == 4 spaces
 }
 
 -- Search and match settings
 local search_settings = {
     ignorecase = true,             -- Ignore case when searching
     smartcase = true,              -- Use smart case when searching
-    showmatch = true               -- Show matching brackets
+    showmatch = true,              -- Show matching brackets
 }
 
 -- Window and screen division settings
 local window_settings = {
     splitright = true,             -- Vertical splits open to the right
-    splitbelow = true              -- Horizontal splits open below
+    splitbelow = true,             -- Horizontal splits open below
 }
 
 -- Other settings and features
@@ -48,7 +49,7 @@ local other_opt_settings = {
     clipboard = 'unnamedplus',     -- Use system clipboard for copy-paste operations
     completeopt = 'menuone,noselect', -- Enable menu-driven completion, disable automatic selection
     shortmess = "csI",             -- Abbreviate messages (no intro), use insert completion
-    whichwrap = "<>[]hl"           -- Allow < > [ ] to wrap to the next/previous line, as well as h and l
+    whichwrap = "<>[]hl",          -- Allow < > [ ] to wrap to the next/previous line, as well as h and l
 }
 local other_g_settings = {
     mapleader = ' ',               -- Set mapleader symbol
