@@ -11,9 +11,8 @@ function M.setup()
                         exe = "clang-format",
                         args = { "-style=file" },
                         stdin = true,
-                        tempfile_dir = vim.fn.expand("~/.config/nvim/utils/format"),
                     }
-                end
+                end,
             },
             java = {
                 function()
@@ -27,7 +26,7 @@ function M.setup()
                         stdin = true,
                         cwd = vim.fn.expand("~"),
                     }
-                end
+                end,
             },
         }
     })

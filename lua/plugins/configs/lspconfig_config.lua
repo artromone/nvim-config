@@ -10,7 +10,7 @@ function M.setup()
     lspconfig.clangd.setup {
         on_attach = function(client, bufnr) end,
         filetypes = {"c", "cpp", "h"},
-        root_dir = lspconfig.util.root_pattern("CMakeLists.txt", ".git", ".hg"),
+        root_dir = lspconfig.util.root_pattern("compile_commands.json", "CMakeLists.txt", ".git", ".hg"),
         cmd = {
             "clangd",
             "--clang-tidy",
