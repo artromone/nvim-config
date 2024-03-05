@@ -34,6 +34,20 @@ function M.setup()
         },
     }
 
+    lspconfig.pylsp.setup {
+        on_attach = function(client, bufnr) end,
+        filetypes = {"python"},
+        root_dir = lspconfig.util.root_pattern("pyproject.toml", "setup.py", ".git", ".hg"),
+        settings = {
+            pylsp = {
+                plugins = {
+                    pylint = {enabled = true},
+                    jedi_completion = {fuzzy = true}
+                }
+            }
+        }
+    }
+
     lspconfig.gopls.setup {
         on_attach = function(client, bufnr) end,
         filetypes = {"go"},

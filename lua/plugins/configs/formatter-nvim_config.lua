@@ -28,6 +28,23 @@ function M.setup()
                     }
                 end,
             },
+            python = {
+                function()
+                    return {
+                        exe = "black",
+                        args = { "-" },
+                        stdin = true,
+                    }
+                end,
+            },
+            go = {
+                function()
+                    return {
+                        exe = "gofmt",
+                        stdin = true,
+                    }
+                end,
+            },
         }
     })
 end
