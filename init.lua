@@ -15,6 +15,7 @@ local plugins = {
     'symbol-usage-nvim_config',
     'nvim-treesitter_config',
     'fidget-nvim_config',
+    'rainbow-delimiters_config',
 }
 
 for _, module_name in ipairs(plugins) do

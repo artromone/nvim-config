@@ -27,6 +27,7 @@ Plug('mhartington/formatter.nvim')
 Plug('debugloop/telescope-undo.nvim')
 Plug('Wansmer/symbol-usage.nvim')
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
+Plug('HiPhish/rainbow-delimiters.nvim') -- wors with treesitter
 
 -- LSP (language server protocol)
 Plug('neovim/nvim-lspconfig')
