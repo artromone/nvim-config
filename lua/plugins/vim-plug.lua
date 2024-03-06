@@ -5,8 +5,8 @@ vim.call('plug#begin')
 
 
 -- Theme
-Plug('navarasu/onedark.nvim')
---- Plug('catppuccin/nvim')
+Plug('navarasu/onedark.nvim') --- Plug('catppuccin/nvim')
+Plug('nvimdev/dashboard-nvim')
 
 -- Plugin manager: vim-plug
 Plug('junegunn/vim-plug', { ['do'] = ':PlugUpgrade' })
@@ -28,8 +28,11 @@ Plug('debugloop/telescope-undo.nvim')
 Plug('Wansmer/symbol-usage.nvim')
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 Plug('HiPhish/rainbow-delimiters.nvim') -- wors with treesitter
-Plug('lewis6991/gitsigns.nvim')
 Plug('lukas-reineke/indent-blankline.nvim')
+
+-- VCS
+Plug('lewis6991/gitsigns.nvim')
+Plug('tpope/vim-fugitive')
 
 -- LSP (language server protocol)
 Plug('neovim/nvim-lspconfig')

@@ -72,12 +72,20 @@ local autocmds = {
 -- Neovide
 if vim.g.neovide then
     vim.cmd([[
-        augroup AutoOpenNvimTree
+        augroup AutoOpenDashboard
         autocmd!
-        autocmd VimEnter * :NvimTreeRefresh | :NvimTreeToggle
+        autocmd VimEnter * Dashboard
         augroup END
     ]])
+    -- vim.cmd([[
+    --     augroup IndentBlankline
+    --         autocmd!
+    --         autocmd FileType * IBLEnable
+    --         autocmd FileType * if &ft != 'dashboard' | IBLDisable | endif
+    --     augroup END
+    -- ]])
 end
+-- autocmd VimEnter * :NvimTreeRefresh | :NvimTreeToggle
 
 
 -- Applying settings
