@@ -16,6 +16,8 @@ local plugins = {
     'nvim-treesitter_config',
     'fidget-nvim_config',
     'rainbow-delimiters_config',
+    'gitsigns-nvim_config',
+    'indent-blankline_config',
 }
 
 for _, module_name in ipairs(plugins) do

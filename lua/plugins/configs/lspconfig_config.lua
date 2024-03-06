@@ -41,8 +41,16 @@ function M.setup()
         settings = {
             pylsp = {
                 plugins = {
-                    pylint = {enabled = true},
-                    jedi_completion = {fuzzy = true}
+                    pylint = {
+                      enabled = false,
+                      args = { "--enable=F,E" }, -- (W)(E)(F)
+                      threshold = "warning"
+                    },
+                    jedi_completion = {fuzzy = true},
+                    pycodestyle = {
+                      enabled = true,
+                      maxLineLength = 120
+                    },
                 }
             }
         }

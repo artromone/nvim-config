@@ -28,6 +28,8 @@ Plug('debugloop/telescope-undo.nvim')
 Plug('Wansmer/symbol-usage.nvim')
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 Plug('HiPhish/rainbow-delimiters.nvim') -- wors with treesitter
+Plug('lewis6991/gitsigns.nvim')
+Plug('lukas-reineke/indent-blankline.nvim')
 
 -- LSP (language server protocol)
 Plug('neovim/nvim-lspconfig')
