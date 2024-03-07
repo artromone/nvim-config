@@ -77,13 +77,12 @@ if vim.g.neovide then
         autocmd VimEnter * Dashboard
         augroup END
     ]])
-    -- vim.cmd([[
-    --     augroup IndentBlankline
-    --         autocmd!
-    --         autocmd FileType * IBLEnable
-    --         autocmd FileType * if &ft != 'dashboard' | IBLDisable | endif
-    --     augroup END
-    -- ]])
+    vim.cmd([[
+        augroup HideIndentBlankline
+            autocmd!
+            autocmd FileType * IBLDisable
+        augroup END
+    ]])
 end
 -- autocmd VimEnter * :NvimTreeRefresh | :NvimTreeToggle
 
