@@ -37,8 +37,12 @@ Plug('echasnovski/mini.move', { ['branch'] = 'stable' })
 Plug('echasnovski/mini.pairs', { ['branch'] = 'stable' })
 
 -- VCS
-Plug('lewis6991/gitsigns.nvim')
-Plug('tpope/vim-fugitive')
+Plug('lewis6991/gitsigns.nvim') --------------------------------------------------- LEARN!!!
+Plug('tpope/vim-fugitive') --------------------------------------------------- LEARN!!!
+
+-- Build
+--Plug('Civitasv/cmake-tools.nvim') --------------------------------------------------- LEARN!!!
+Plug('cdelledonne/vim-cmake')
 
 -- LSP (language server protocol)
 Plug('neovim/nvim-lspconfig')

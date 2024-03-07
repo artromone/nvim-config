@@ -71,10 +71,16 @@ local autocmds = {
 
 -- Neovide
 if vim.g.neovide then
+    -- vim.cmd([[
+    --     augroup AutoOpenDashboard
+    --     autocmd!
+    --     autocmd VimEnter * Dashboard
+    --     augroup END
+    -- ]])
     vim.cmd([[
-        augroup AutoOpenDashboard
+        augroup AutoOpenNvimTree
         autocmd!
-        autocmd VimEnter * Dashboard
+        autocmd VimEnter * :NvimTreeRefresh | :NvimTreeToggle
         augroup END
     ]])
     vim.cmd([[
@@ -84,7 +90,6 @@ if vim.g.neovide then
         augroup END
     ]])
 end
--- autocmd VimEnter * :NvimTreeRefresh | :NvimTreeToggle
 
 
 -- Applying settings
