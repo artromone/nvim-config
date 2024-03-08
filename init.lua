@@ -3,24 +3,33 @@ require('plugins/vim-plug')
 
 local plugins_configs_dir = 'plugins/configs/'
 local plugins = {
-    'tagbar_config',
-    'nvim-tree-lua_config',
-    'nvim-cmp_config',
-    'Comment_config',
-    'lualine_config',
-    'telescope_config',
-    'lspconfig_config',
-    'bufferline-nvim_config',
-    'formatter-nvim_config',
-    'symbol-usage-nvim_config',
-    'nvim-treesitter_config',
-    'fidget-nvim_config',
-    'rainbow-delimiters_config',
-    'gitsigns-nvim_config',
-    'indent-blankline_config',
     'dashboard-nvim_config',
+
+    'tagbar_config',
+    'nvim-web-devicons_config',
+    'nvim-tree-lua_config',
+    'lualine_config',
+    'telescope-nvim_config',
+    'bufferline-nvim_config',
+    'which-key-nvim_config',
+
+    'nvim-surround_config',
+    'Comment_config',
+    'formatter-nvim_config',
+    'nvim-treesitter_config',
+    'rainbow-delimiters_config',
+    'indent-blankline_config',
     'mini-nvim_config',
+
+    'gitsigns-nvim_config',
+
     'cmake-tools-nvim_config',
+
+    'lspconfig_config',
+    'fidget-nvim_config',
+    'symbol-usage-nvim_config',
+
+    'nvim-cmp_config',
 }
 
 for _, module_name in ipairs(plugins) do

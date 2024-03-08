@@ -1,4 +1,4 @@
--- which-key_config
+-- which-key-nvim_config
 
 local M = {}
 

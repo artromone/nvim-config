@@ -11,6 +11,7 @@ function M.setup()
                         exe = "clang-format",
                         args = { "-style=file" },
                         stdin = true,
+                        cwd = vim.fn.expand("~/programming/"),
                     }
                 end,
             },

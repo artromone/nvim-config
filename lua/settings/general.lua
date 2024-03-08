@@ -6,7 +6,7 @@ vim.loader.enable()                -- Use Lua
 
 -- Appearance settings
 local appearance = {
-    colorcolumn = '120',           -- Characters divider
+    colorcolumn = '100',           -- Characters divider
     cursorline = true,             -- Highlight the line with the cursor
     number = true,                 -- Enable line numbers
     relativenumber = false,        -- Disable relative line numbers
@@ -84,9 +84,9 @@ if vim.g.neovide then
         augroup END
     ]])
     vim.cmd([[
-        augroup HideIndentBlankline
+        augroup ShowIndentBlankline
             autocmd!
-            autocmd FileType * IBLDisable
+            autocmd FileType * IBLEnable
         augroup END
     ]])
 end

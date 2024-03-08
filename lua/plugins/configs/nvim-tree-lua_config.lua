@@ -8,7 +8,7 @@ function M.setup()
             sorter = "case_sensitive",
         },
         view = {
-            width = 35,
+            width = 30,
         },
         renderer = {
             group_empty = true,
@@ -16,6 +16,7 @@ function M.setup()
         disable_netrw = false,
         hijack_netrw = true,
     }
+
     local api = require("nvim-tree.api")
 
     vim.g.loaded_netrw = 1

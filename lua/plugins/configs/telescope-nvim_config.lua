@@ -1,4 +1,4 @@
--- telescope_config.lua
+-- telescope-nvim_config.lua
 
 local M = {}
 
