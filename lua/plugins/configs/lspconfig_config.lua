@@ -7,18 +7,19 @@ function M.setup()
 
     local current_directory = vim.fn.getcwd()
 
-    lspconfig.clangd.setup {
+    -- lspconfig.clangd.setup {
+    lspconfig.ccls.setup {
         on_attach = function(client, bufnr) end,
         filetypes = {"c", "cpp", "h"},
         root_dir = lspconfig.util.root_pattern("compile_commands.json", "CMakeLists.txt", ".git", ".hg"),
         cmd = {
-            "clangd",
-            "--clang-tidy",
-            "--background-index",
-            "--completion-style=detailed",
-            "--suggest-missing-includes",
-            "--header-insertion=never",
-            "--cross-file-rename"
+            "ccls",
+            -- "--clang-tidy",
+            -- "--background-index",
+            -- "--completion-style=detailed",
+            -- "--suggest-missing-includes",
+            -- "--header-insertion=never",
+            -- "--cross-file-rename"
         },
     }
 

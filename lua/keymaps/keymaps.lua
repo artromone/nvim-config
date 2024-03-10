@@ -32,6 +32,8 @@ map('n', '<leader>fg', telescope.live_grep, {})
 map('n', '<leader>fb', telescope.buffers, {})
 map('n', '<leader>fh', telescope.help_tags, {})
 
+map("n", "<leader>m", "<cmd>lua require('memento').toggle()<cr>", default_opts)
+
 
 -- Code
 map('i', '<C-Space>', 'v:lua.require"cmp".complete()', default_opts)
