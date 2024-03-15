@@ -25,14 +25,14 @@ map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', default_opts)
 map('n', '<F6>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', default_opts)
 map('n', '<F8>', ':TagbarToggle<CR>', default_opts)
 
-map("n", "<leader>u", "<cmd>Telescope undo<cr>", default_opts)
+map("n", "<leader>u", "<cmd>Telescope undo<CR>", default_opts)
 
 map('n', '<leader>ff', telescope.find_files, {})
 map('n', '<leader>fg', telescope.live_grep, {})
 map('n', '<leader>fb', telescope.buffers, {})
 map('n', '<leader>fh', telescope.help_tags, {})
 
-map("n", "<leader>m", "<cmd>lua require('memento').toggle()<cr>", default_opts)
+map("n", "<leader>m", "<cmd>lua require('memento').toggle()<CR>", default_opts)
 
 
 -- Code
@@ -41,6 +41,10 @@ map('i', '<C-Space>', 'v:lua.require"cmp".complete()', default_opts)
 map('n', '<C-s>', ':w<CR>:FormatWrite<CR>',  default_opts)
 map('i', '<C-s>', '<esc><CR>:w<CR>:FormatWrite<CR>', default_opts)
 -- map('n', '<Leader>f', ':w<CR>:FormatWrite<CR>', default_opts)
+
+
+-- Build
+map("n", "<leader>c", ":CMakeToggle<CR>", default_opts)
 
 
 -- Lsp

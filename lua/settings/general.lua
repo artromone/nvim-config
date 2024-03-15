@@ -10,7 +10,7 @@ local appearance = {
     cursorline = true,             -- Highlight the line with the cursor
     number = true,                 -- Enable line numbers
     relativenumber = false,        -- Disable relative line numbers
-    so = 999,                      -- Keep cursor always centered
+    -- so = 999,                      -- Keep cursor always centered
     showmode = false,              -- No things like --INSERT-- anymore
     timeoutlen = 1000,             -- Time to wait for a mapped sequence to complete (in milliseconds)
     wrap = false,                  -- No wrap
@@ -89,6 +89,12 @@ if vim.g.neovide then
             autocmd FileType * IBLEnable
         augroup END
     ]])
+    vim.cmd([[
+    augroup EnableCursorColumn
+        autocmd BufRead,BufNewFile * set cursorcolumn
+    augroup END
+    ]])
+
 end
 
 

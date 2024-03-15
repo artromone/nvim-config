@@ -46,6 +46,15 @@ function M.setup()
                     }
                 end,
             },
+            lua = {
+                function()
+                    return {
+                        exe = "lua-format",
+                        args = { "-" },
+                        stdin = true,
+                    }
+                end,
+            },
         }
     })
 end

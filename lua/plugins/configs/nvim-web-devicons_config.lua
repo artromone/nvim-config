@@ -3,7 +3,7 @@
 local M = {}
 
 function M.setup()
-    --local icons = require("nvim-web-devicons")
+    local icons = require("nvim-web-devicons").setup()
 
     --icons.setup(
     -- {
@@ -40,7 +40,7 @@ function M.setup()
     --     }
     --)
 
-    require("termicons").setup()
+    -- require("termicons").setup()
 end
 
 return M

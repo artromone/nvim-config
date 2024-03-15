@@ -3,10 +3,12 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
+-- NVim
+Plug('dstein64/vim-startuptime')
 
 -- Appearence
 Plug('navarasu/onedark.nvim') --- Plug('catppuccin/nvim')
-Plug('nvimdev/dashboard-nvim') --------------------------------------------------- TODO!!!
+-- Plug('nvimdev/dashboard-nvim') --------------------------------------------------- TODO!!!
 -- Plug('yamatsum/nvim-nonicons')
 Plug('mskelton/termicons.nvim')
 Plug('mawkler/modicator.nvim')
@@ -26,6 +28,8 @@ Plug('folke/which-key.nvim') ---------------------------------------------------
 Plug('sontungexpt/stcursorword')
 Plug('gaborvecsei/memento.nvim')
 Plug('otavioschwanck/arrow.nvim')
+Plug('kevinhwang91/promise-async') -- for kevinhwang91/nvim-ufo
+Plug('kevinhwang91/nvim-ufo')
 
 -- Collaborate
 Plug('jbyuki/instant.nvim')
@@ -40,15 +44,25 @@ Plug('HiPhish/rainbow-delimiters.nvim') -- wors with treesitter
 Plug('lukas-reineke/indent-blankline.nvim')
 Plug('echasnovski/mini.move', { ['branch'] = 'stable' })
 Plug('echasnovski/mini.pairs', { ['branch'] = 'stable' })
+Plug('folke/neodev.nvim')
 
-Plug('d86leader/vim-cpp-helper')
+	Plug('d86leader/vim-cpp-helper')
 
 -- VCS
 Plug('lewis6991/gitsigns.nvim') --------------------------------------------------- LEARN!!!
 Plug('tpope/vim-fugitive') --------------------------------------------------- LEARN!!!
+Plug('rbong/vim-flog')
+Plug("FabijanZulj/blame.nvim")
 
 -- Build
 Plug('cdelledonne/vim-cmake')
+-- Plug('stevearc/overseer.nvim')
+-- Plug('akinsho/toggleterm.nvim', { ['tag'] = '*'} )
+-- Plug('Civitasv/cmake-tools.nvim')
+
+-- Debug
+Plug('mfussenegger/nvim-dap')
+Plug('rcarriga/nvim-dap-ui')
 
 -- LSP (language server protocol)
 Plug('neovim/nvim-lspconfig')

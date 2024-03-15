@@ -3,7 +3,7 @@ require('plugins/vim-plug')
 
 local plugins_configs_dir = 'plugins/configs/'
 local plugins = {
-    'dashboard-nvim_config',
+    -- 'dashboard-nvim_config',
     'modicator-nvim_config',
 
     'tagbar_config',
@@ -12,9 +12,10 @@ local plugins = {
     'lualine_config',
     'telescope-nvim_config',
     'bufferline-nvim_config',
-    'which-key-nvim_config',
+    -- 'which-key-nvim_config',
     'stcursorword_config',
     'arrow-nvim_config',
+    'nvim-ufo_config',
 
     'nvim-surround_config',
     'Comment_config',
@@ -23,12 +24,16 @@ local plugins = {
     'rainbow-delimiters_config',
     'indent-blankline_config',
     'mini-nvim_config',
+    'neodev_config', -- must be done before lsp!
 
     'vim-cpp-helper-vim_config',
 
     'gitsigns-nvim_config',
 
     'cmake-tools-nvim_config',
+
+    'nvim-dap_config',
+    'nvim-dap-ui_config',
 
     'lspconfig_config',
     'fidget-nvim_config',
