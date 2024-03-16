@@ -1,1 +1,2 @@
-set clipboard = unnamedplus
+" Enable clipboard support
+set clipboard=unnamedplus

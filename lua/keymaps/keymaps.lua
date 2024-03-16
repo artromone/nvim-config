@@ -8,31 +8,37 @@ local telescope = require('telescope.builtin')
 local default_opts = {noremap = true, silent = true}
 
 
--- map('', '<up>', ':echoe "Use k !!!"<CR>', default_opts)
--- map('', '<down>', ':echoe "Use j !!!"<CR>', default_opts)
--- map('', '<left>', ':echoe "Use h !!!"<CR>', default_opts)
--- map('', '<right>', ':echoe "Use l !!!"<CR>', default_opts)
-
-
 -- General
-map('i', 'jj', '<Esc>', {noremap = true})
+
+-- map('i', 'jj', '<Esc>', {noremap = true})
+
+map('', '<up>', ':echoe "Use k !!!"<CR>', default_opts)
+map('', '<down>', ':echoe "Use j !!!"<CR>', default_opts)
+map('', '<left>', ':echoe "Use h !!!"<CR>', default_opts)
+map('', '<right>', ':echoe "Use l !!!"<CR>', default_opts)
+
+map('i', '<A-h>', '<Esc>hli', default_opts)
+map('i', '<A-l>', '<Esc>lli', default_opts)
+map('i', '<A-j>', '<Esc>jli', default_opts)
+map('i', '<A-k>', '<Esc>kli', default_opts)
 
 
 -- Navigation
-map('n', '<Tab>', ':BufferLineCycleNext<CR>', default_opts)
-map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', default_opts)
+map('n', '<C-P>', ':BufferLineCycleNext<CR>', default_opts)
+map('n', '<C-N>', ':BufferLineCyclePrev<CR>', default_opts)
 
 map('n', '<F6>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', default_opts)
 map('n', '<F8>', ':TagbarToggle<CR>', default_opts)
 
 map("n", "<leader>u", "<cmd>Telescope undo<CR>", default_opts)
 
-map('n', '<leader>ff', telescope.find_files, {})
-map('n', '<leader>fg', telescope.live_grep, {})
-map('n', '<leader>fb', telescope.buffers, {})
-map('n', '<leader>fh', telescope.help_tags, {})
+map('n', '<leader>ff', telescope.find_files, default_opts)
+map('n', '<leader>fg', telescope.live_grep, default_opts)
+map('n', '<leader>fh', telescope.help_tags, default_opts)
 
-map("n", "<leader>m", "<cmd>lua require('memento').toggle()<CR>", default_opts)
+-- map('n', '<leader>;', telescope.buffers, {})
+map("n", ";", "<cmd>lua require('memento').toggle()<CR>", default_opts)
+map('n', '<leader>;', telescope.buffers, default_opts )
 
 
 -- Code
@@ -71,9 +77,9 @@ autocmd('LspAttach', {
       print(vim.inspect(lsp.list_workspace_folders())) 
     end, opts)
 
-    map('n', '<space>D', lsp.type_definition, opts)
+    -- map('n', '<space>D', lsp.type_definition, opts)
     map('n', '<space>rn', lsp.rename, opts)
-    map({ 'n', 'v' }, '<space>ca', lsp.code_action, opts)
+    -- map({ 'n', 'v' }, '<space>ca', lsp.code_action, opts)
    
     -- map('n', '<space>f', function()
     --   lsp.format { async = true }

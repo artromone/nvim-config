@@ -7,7 +7,10 @@ vim.call('plug#begin')
 Plug('dstein64/vim-startuptime')
 
 -- Appearence
-Plug('navarasu/onedark.nvim') --- Plug('catppuccin/nvim')
+	-- Plug('catppuccin/nvim')
+Plug('navarasu/onedark.nvim')
+-- Plug('AlexvZyl/nordic.nvim', { ['branch'] = 'main' })
+
 -- Plug('nvimdev/dashboard-nvim') --------------------------------------------------- TODO!!!
 -- Plug('yamatsum/nvim-nonicons')
 Plug('mskelton/termicons.nvim')

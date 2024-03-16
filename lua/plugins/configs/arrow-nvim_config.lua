@@ -5,7 +5,7 @@ local M = {}
 function M.setup()
     require('arrow').setup({
     show_icons = true,
-    leader_key = ';'
+    leader_key = 'b'
   })
 end
 
