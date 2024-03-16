@@ -2,7 +2,7 @@
 require('plugins/vim-plug')
 
 local plugins_configs_dir = 'plugins/configs/'
-local plugins = {
+local plugins = {   
     -- 'dashboard-nvim_config',
     'modicator-nvim_config',
 
@@ -11,9 +11,10 @@ local plugins = {
     'nvim-tree-lua_config',
     'lualine_config',
     'telescope-nvim_config',
-    'bufferline-nvim_config',
+    -- 'bufferline-nvim_config',
     -- 'which-key-nvim_config',
     'stcursorword_config',
+    'memento_config',
     'arrow-nvim_config',
     'nvim-ufo_config',
 

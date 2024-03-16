@@ -41,9 +41,11 @@ map('n', '<leader>ff', telescope.find_files, default_opts)
 map('n', '<leader>fg', telescope.live_grep, default_opts)
 map('n', '<leader>fh', telescope.help_tags, default_opts)
 
+map('n', '<F3>', ':vsplit<CR>', default_opts)
+map('n', '<F4>', ':split<CR>', default_opts)
+
 -- map('n', '<leader>;', telescope.buffers, {})
 map('n', '<F2>', ":lua require'telescope'.extensions.repo.list{pattern=[[^.hg$|^.git$]]}<CR>", default_opts)
--- map('n', '<F2>', ":lua require'telescope'.extensions.repo.list{}<CR>", default_opts)
 map("n", ";", "<cmd>lua require('memento').toggle()<CR>", default_opts)
 map('n', '<leader>;', telescope.buffers, default_opts)
 
