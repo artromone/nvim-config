@@ -1,24 +1,21 @@
 -- gitsigns-nvim_config
-
 local M = {}
 
 function M.setup()
-    require('gitsigns').setup{
+    require('gitsigns').setup {
         signs = {
-            add          = { text = '│' },
-            change       = { text = '│' },
-            delete       = { text = '_' },
-            topdelete    = { text = '‾' },
-            changedelete = { text = '~' },
-            untracked    = { text = '┆' },
+            add = {text = '│'},
+            change = {text = '│'},
+            delete = {text = '_'},
+            topdelete = {text = '‾'},
+            changedelete = {text = '~'},
+            untracked = {text = '┆'}
         },
-        signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
-        numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
-        linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
-        word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
-        watch_gitdir = {
-            follow_files = true
-        },
+        signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+        numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
+        linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
+        word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+        watch_gitdir = {follow_files = true},
         auto_attach = true,
         attach_to_untracked = false,
         current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
@@ -27,7 +24,7 @@ function M.setup()
             virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
             delay = 1000,
             ignore_whitespace = false,
-            virt_text_priority = 100,
+            virt_text_priority = 100
         },
         current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
         sign_priority = 6,
@@ -42,9 +39,7 @@ function M.setup()
             row = 0,
             col = 1
         },
-        yadm = {
-            enable = false
-        },
+        yadm = {enable = false}
     }
 end
 

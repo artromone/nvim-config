@@ -1,5 +1,4 @@
 -- telescope-nvim_config.lua
-
 local M = {}
 
 function M.setup()
@@ -11,14 +10,8 @@ function M.setup()
     telescope.setup {
         defaults = {
             mappings = {
-                i = {
-                    ["<C-x>"] = false,
-                    ["<C-q>"] = actions.send_to_qflist,
-                },
-                n = {
-                    ["<C-x>"] = false,
-                    ["<C-q>"] = actions.send_to_qflist,
-                }
+                i = {["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist},
+                n = {["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist}
             }
         }
     }
@@ -30,9 +23,8 @@ function TelescopeBuffers()
         show_all_buffers = true,
         sort_lastused = true,
         sort_mru = true,
-        ignore_current_buffer = true,
+        ignore_current_buffer = true
     }
 end
-
 
 return M

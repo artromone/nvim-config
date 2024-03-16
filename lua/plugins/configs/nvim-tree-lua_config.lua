@@ -1,20 +1,13 @@
 -- nvim-tree.lua_config.lua
-
 local M = {}
 
 function M.setup()
     require'nvim-tree'.setup {
-        sort = {
-            sorter = "case_sensitive",
-        },
-        view = {
-            width = 30,
-        },
-        renderer = {
-            group_empty = true,
-        },
+        sort = {sorter = "case_sensitive"},
+        view = {width = 30},
+        renderer = {group_empty = true},
         disable_netrw = false,
-        hijack_netrw = true,
+        hijack_netrw = true
     }
 
     local api = require("nvim-tree.api")
@@ -24,19 +17,18 @@ function M.setup()
 
     vim.opt.termguicolors = true
 
-
-     function change_root_to_cwd()
+    function change_root_to_cwd()
         local cwd = vim.fn.getcwd()
         require("nvim-tree.api").tree.change_root(cwd)
     end
-    vim.cmd[[
+    vim.cmd [[
         autocmd DirChanged * call v:lua.change_root_to_cwd()
     ]]
 
     function find_file_on_bufenter()
         require("nvim-tree.api").tree.find_file()
     end
-    vim.cmd[[
+    vim.cmd [[
         autocmd BufEnter * call v:lua.find_file_on_bufenter()
     ]]
 end

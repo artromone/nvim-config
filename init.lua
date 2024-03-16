@@ -6,7 +6,7 @@ local plugins = {
     -- 'dashboard-nvim_config',
     'modicator-nvim_config',
 
-    'tagbar_config',
+    'aerial_config',
     'nvim-web-devicons_config',
     'nvim-tree-lua_config',
     'lualine_config',

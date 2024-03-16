@@ -7,7 +7,7 @@ vim.call('plug#begin')
 Plug('dstein64/vim-startuptime')
 
 -- Appearence
-	-- Plug('catppuccin/nvim')
+-- Plug('catppuccin/nvim')
 Plug('navarasu/onedark.nvim')
 -- Plug('AlexvZyl/nordic.nvim', { ['branch'] = 'main' })
 
@@ -17,16 +17,16 @@ Plug('mskelton/termicons.nvim')
 Plug('mawkler/modicator.nvim')
 
 -- Plugin manager: vim-plug
-Plug('junegunn/vim-plug', { ['do'] = ':PlugUpgrade' })
+Plug('junegunn/vim-plug', {['do'] = ':PlugUpgrade'})
 
 -- Navigation and viewing
-Plug('preservim/tagbar', { ['on'] = 'TagbarToggle' }) --------------------------------------------------- TODO!!!
+Plug('stevearc/aerial.nvim') --------------------------------------------------- TODO!!!
 Plug('nvim-tree/nvim-web-devicons') -- for nvim-tree
-Plug('nvim-tree/nvim-tree.lua', { ['on'] = 'NvimTreeToggle' })
+Plug('nvim-tree/nvim-tree.lua', {['on'] = 'NvimTreeToggle'})
 Plug('nvim-lualine/lualine.nvim')
 Plug('nvim-lua/plenary.nvim') -- for nvim-telescope/telescope.nvim
 Plug('nvim-telescope/telescope.nvim')
-Plug('akinsho/bufferline.nvim', { ['tag'] = '*' })
+Plug('akinsho/bufferline.nvim', {['tag'] = '*'})
 Plug('folke/which-key.nvim') --------------------------------------------------- LEARN!!!
 Plug('sontungexpt/stcursorword')
 Plug('gaborvecsei/memento.nvim')
@@ -45,11 +45,11 @@ Plug('debugloop/telescope-undo.nvim')
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 Plug('HiPhish/rainbow-delimiters.nvim') -- wors with treesitter
 Plug('lukas-reineke/indent-blankline.nvim')
-Plug('echasnovski/mini.move', { ['branch'] = 'stable' })
-Plug('echasnovski/mini.pairs', { ['branch'] = 'stable' })
+Plug('echasnovski/mini.move', {['branch'] = 'stable'})
+Plug('echasnovski/mini.pairs', {['branch'] = 'stable'})
 Plug('folke/neodev.nvim')
 
-	Plug('d86leader/vim-cpp-helper')
+Plug('d86leader/vim-cpp-helper')
 
 -- VCS
 Plug('lewis6991/gitsigns.nvim') --------------------------------------------------- LEARN!!!
@@ -79,6 +79,5 @@ Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
-
 
 vim.call('plug#end')

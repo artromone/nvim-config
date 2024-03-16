@@ -28,7 +28,7 @@ map('n', '<C-P>', ':BufferLineCycleNext<CR>', default_opts)
 map('n', '<C-N>', ':BufferLineCyclePrev<CR>', default_opts)
 
 map('n', '<F6>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', default_opts)
-map('n', '<F8>', ':TagbarToggle<CR>', default_opts)
+map('n', '<F8>', ':AerialToggle<CR>', default_opts)
 
 map("n", "<leader>u", "<cmd>Telescope undo<CR>", default_opts)
 
@@ -38,15 +38,15 @@ map('n', '<leader>fh', telescope.help_tags, default_opts)
 
 -- map('n', '<leader>;', telescope.buffers, {})
 map("n", ";", "<cmd>lua require('memento').toggle()<CR>", default_opts)
-map('n', '<leader>;', telescope.buffers, default_opts )
+map('n', '<leader>;', telescope.buffers, default_opts)
 
 
 -- Code
 map('i', '<C-Space>', 'v:lua.require"cmp".complete()', default_opts)
 
-map('n', '<C-s>', ':w<CR>:FormatWrite<CR>',  default_opts)
-map('i', '<C-s>', '<esc><CR>:w<CR>:FormatWrite<CR>', default_opts)
--- map('n', '<Leader>f', ':w<CR>:FormatWrite<CR>', default_opts)
+-- map('n', '<C-s>', ':w<CR>:FormatWrite<CR>',  default_opts)
+-- map('i', '<C-s>', '<esc><CR>:w<CR>:FormatWrite<CR>', default_opts)
+map('n', '<Leader>f', ':w!<CR>:FormatWrite<CR>', default_opts)
 
 
 -- Build
@@ -55,44 +55,46 @@ map("n", "<leader>c", ":CMakeToggle<CR>", default_opts)
 
 -- Lsp
 autocmd('LspAttach', {
-  group = augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Включаем автодополнение по нажатию <C-x><C-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+    group = augroup('UserLspConfig', {}),
+    callback = function(ev)
+        -- Включаем автодополнение по нажатию <C-x><C-o>
+        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-    -- Локальные отображения для буфера
-    local opts = { buffer = ev.buf }
+        -- Локальные отображения для буфера
+        local opts = {buffer = ev.buf}
 
-    map('n', 'gD', lsp.declaration, opts)
-    map('n', 'gd', lsp.definition, opts)
-    map('n', 'gi', lsp.implementation, opts)
-    map('n', 'gr', lsp.references, opts)
+        map('n', 'gD', lsp.declaration, opts)
+        map('n', 'gd', lsp.definition, opts)
+        map('n', 'gi', lsp.implementation, opts)
+        map('n', 'gr', lsp.references, opts)
 
-    map('n', 'K', lsp.hover, opts)
-    map('n', '<C-k>', lsp.signature_help, opts)
+        map('n', 'K', lsp.hover, opts)
+        map('n', '<C-k>', lsp.signature_help, opts)
 
-    map('n', '<space>wa', lsp.add_workspace_folder, opts)
-    map('n', '<space>wr', lsp.remove_workspace_folder, opts)
-    map('n', '<space>wl', function() 
-      print(vim.inspect(lsp.list_workspace_folders())) 
-    end, opts)
+        map('n', '<space>wa', lsp.add_workspace_folder, opts)
+        map('n', '<space>wr', lsp.remove_workspace_folder, opts)
+        map('n', '<space>wl',
+            function() print(vim.inspect(lsp.list_workspace_folders())) end,
+            opts)
 
-    -- map('n', '<space>D', lsp.type_definition, opts)
-    map('n', '<space>rn', lsp.rename, opts)
-    -- map({ 'n', 'v' }, '<space>ca', lsp.code_action, opts)
-   
-    -- map('n', '<space>f', function()
-    --   lsp.format { async = true }
-    -- end, opts)
-  end,
+        -- map('n', '<space>D', lsp.type_definition, opts)
+        map('n', '<space>rn', lsp.rename, opts)
+        -- map({ 'n', 'v' }, '<space>ca', lsp.code_action, opts)
+
+        -- map('n', '<space>f', function()
+        --   lsp.format { async = true }
+        -- end, opts)
+    end
 })
 
 
 -- Neovide
 if vim.g.neovide then
-  vim.g.neovide_scale_factor = 0.7 * vim.g.neovide_scale_factor
+    vim.g.neovide_scale_factor = 0.7 * vim.g.neovide_scale_factor
 
-    map({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
-    map({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
-    map({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+    map({"n", "v"}, "<C-+>",
+        ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+    map({"n", "v"}, "<C-->",
+        ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+    map({"n", "v"}, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
 end

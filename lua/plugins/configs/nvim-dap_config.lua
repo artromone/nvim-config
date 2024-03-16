@@ -1,8 +1,7 @@
 -- nvim-dap_config
-
 local M = {}
 
-function M.setup()    
+function M.setup()
     local dap = require("dap")
 
     dap.adapters.cppdbg = {
@@ -10,13 +9,8 @@ function M.setup()
         command = 'gdb',
         name = "cppdbg",
         args = {},
-        attach = {
-            pidProperty = "pid",
-            pidSelect = "ask"
-        },
-        env = {
-            LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY = "YES"
-        }
+        attach = {pidProperty = "pid", pidSelect = "ask"},
+        env = {LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY = "YES"}
     }
 
     dap.configurations.cpp = {
@@ -25,7 +19,8 @@ function M.setup()
             type = "cppdbg",
             request = "launch",
             program = function()
-                return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                return vim.fn.input('Path to executable: ',
+                                    vim.fn.getcwd() .. '/', 'file')
             end,
             args = {},
             cwd = "${workspaceFolder}",
@@ -33,12 +28,14 @@ function M.setup()
             env = {},
             externalConsole = false,
             MIMode = "gdb",
-            setupCommands = {{
-                description = "Enable pretty-printing for gdb",
-                text = "-enable-pretty-printing",
-                ignoreFailures = true,
-            }},
-        },
+            setupCommands = {
+                {
+                    description = "Enable pretty-printing for gdb",
+                    text = "-enable-pretty-printing",
+                    ignoreFailures = true
+                }
+            }
+        }
     }
 end
 

@@ -1,11 +1,10 @@
 -- cmake-tools-nvim_config
-
 local M = {}
 
 function M.setup()
-	vim.g.cmake_link_compile_commands = 1
+    vim.g.cmake_link_compile_commands = 1
     vim.g.cmake_build_dir_location = 'build'
-    --require("vim-cmake").setup {}
+    -- require("vim-cmake").setup {}
     -- 	require("cmake-tools").setup {
     --     cmake_command = "cmake", -- this is used to specify cmake command path
     --     ctest_command = "ctest", -- this is used to specify ctest command path

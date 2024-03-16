@@ -1,5 +1,4 @@
 -- formatter-nvim_config.lua
-
 local M = {}
 
 function M.setup()
@@ -9,11 +8,11 @@ function M.setup()
                 function()
                     return {
                         exe = "clang-format",
-                        args = { "-style=file" },
+                        args = {"-style=file"},
                         stdin = true,
-                        cwd = vim.fn.expand("~/programming/"),
+                        cwd = vim.fn.expand("~/programming/")
                     }
-                end,
+                end
             },
             java = {
                 function()
@@ -25,36 +24,25 @@ function M.setup()
                             vim.api.nvim_buf_get_name(0)
                         },
                         stdin = true,
-                        cwd = vim.fn.expand("~"),
+                        cwd = vim.fn.expand("~")
                     }
-                end,
+                end
             },
             python = {
                 function()
-                    return {
-                        exe = "black",
-                        args = { "-" },
-                        stdin = true,
-                    }
-                end,
+                    return {exe = "black", args = {"-"}, stdin = true}
+                end
             },
-            go = {
-                function()
-                    return {
-                        exe = "gofmt",
-                        stdin = true,
-                    }
-                end,
-            },
+            go = {function() return {exe = "gofmt", stdin = true} end},
             lua = {
                 function()
                     return {
                         exe = "lua-format",
-                        args = { "-" },
-                        stdin = true,
+                        args = {"-i", vim.api.nvim_buf_get_name(0)},
+                        stdin = false
                     }
-                end,
-            },
+                end
+            }
         }
     })
 end
