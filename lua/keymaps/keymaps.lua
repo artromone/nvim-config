@@ -22,6 +22,11 @@ map('i', '<A-l>', '<Esc>lli', default_opts)
 map('i', '<A-j>', '<Esc>jli', default_opts)
 map('i', '<A-k>', '<Esc>kli', default_opts)
 
+map('n', '<C-h>', '<C-w>h', default_opts)
+map('n', '<C-j>', '<C-w>j', default_opts)
+map('n', '<C-k>', '<C-w>k', default_opts)
+map('n', '<C-l>', '<C-w>l', default_opts)
+
 
 -- Navigation
 map('n', '<C-P>', ':BufferLineCycleNext<CR>', default_opts)
@@ -37,6 +42,8 @@ map('n', '<leader>fg', telescope.live_grep, default_opts)
 map('n', '<leader>fh', telescope.help_tags, default_opts)
 
 -- map('n', '<leader>;', telescope.buffers, {})
+map('n', '<F2>', ":lua require'telescope'.extensions.repo.list{pattern=[[^.hg$|^.git$]]}<CR>", default_opts)
+-- map('n', '<F2>', ":lua require'telescope'.extensions.repo.list{}<CR>", default_opts)
 map("n", ";", "<cmd>lua require('memento').toggle()<CR>", default_opts)
 map('n', '<leader>;', telescope.buffers, default_opts)
 
@@ -44,8 +51,8 @@ map('n', '<leader>;', telescope.buffers, default_opts)
 -- Code
 map('i', '<C-Space>', 'v:lua.require"cmp".complete()', default_opts)
 
--- map('n', '<C-s>', ':w<CR>:FormatWrite<CR>',  default_opts)
--- map('i', '<C-s>', '<esc><CR>:w<CR>:FormatWrite<CR>', default_opts)
+map('n', '<C-s>', ':w<CR>',  default_opts)
+map('i', '<C-s>', '<esc><CR>:w<CR>', default_opts)
 map('n', '<Leader>f', ':w!<CR>:FormatWrite<CR>', default_opts)
 
 
@@ -68,8 +75,8 @@ autocmd('LspAttach', {
         map('n', 'gi', lsp.implementation, opts)
         map('n', 'gr', lsp.references, opts)
 
-        map('n', 'K', lsp.hover, opts)
-        map('n', '<C-k>', lsp.signature_help, opts)
+        map('n', 'H', lsp.hover, opts)
+        map('n', '<A-h>', lsp.signature_help, opts)
 
         map('n', '<space>wa', lsp.add_workspace_folder, opts)
         map('n', '<space>wr', lsp.remove_workspace_folder, opts)

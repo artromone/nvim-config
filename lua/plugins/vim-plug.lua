@@ -26,6 +26,7 @@ Plug('nvim-tree/nvim-tree.lua', {['on'] = 'NvimTreeToggle'})
 Plug('nvim-lualine/lualine.nvim')
 Plug('nvim-lua/plenary.nvim') -- for nvim-telescope/telescope.nvim
 Plug('nvim-telescope/telescope.nvim')
+Plug('cljoly/telescope-repo.nvim')
 Plug('akinsho/bufferline.nvim', {['tag'] = '*'})
 Plug('folke/which-key.nvim') --------------------------------------------------- LEARN!!!
 Plug('sontungexpt/stcursorword')

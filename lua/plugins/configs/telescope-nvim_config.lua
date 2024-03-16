@@ -13,8 +13,18 @@ function M.setup()
                 i = {["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist},
                 n = {["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist}
             }
+        },
+        extensions = {
+            repo = {
+                list = {
+                    fd_opts = {"--no-ignore-vcs"},
+                    search_dirs = {"~/programming"}
+                }
+            }
         }
     }
+
+    require("telescope").load_extension "repo"
 end
 
 -- Функция для отображения всех открытых буферов
