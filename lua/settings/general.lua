@@ -1,8 +1,6 @@
 local opt = vim.opt
 local g = vim.g
 
-vim.loader.enable() -- Use Lua
-
 -- Appearance settings
 local appearance = {
     colorcolumn = '100', -- Characters divider

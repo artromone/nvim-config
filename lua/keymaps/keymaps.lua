@@ -11,6 +11,7 @@ local default_opts = {noremap = true, silent = true}
 -- General
 
 -- map('i', 'jj', '<Esc>', {noremap = true})
+map('n', 's', '<Nop>', default_opts)
 
 map('', '<up>', ':echoe "Use k !!!"<CR>', default_opts)
 map('', '<down>', ':echoe "Use j !!!"<CR>', default_opts)
@@ -22,10 +23,14 @@ map('i', '<A-l>', '<Esc>lli', default_opts)
 map('i', '<A-j>', '<Esc>jli', default_opts)
 map('i', '<A-k>', '<Esc>kli', default_opts)
 
-map('n', '<C-h>', '<C-w>h', default_opts)
-map('n', '<C-j>', '<C-w>j', default_opts)
-map('n', '<C-k>', '<C-w>k', default_opts)
-map('n', '<C-l>', '<C-w>l', default_opts)
+-- map('n', '<C-h>', '<C-w>h', default_opts)
+-- map('n', '<C-j>', '<C-w>j', default_opts)
+-- map('n', '<C-k>', '<C-w>k', default_opts)
+-- map('n', '<C-l>', '<C-w>l', default_opts)
+map("n", "<Esc>h", "<C-w>h", default_opts)
+map("n", "<Esc>k", "<C-w>k", default_opts)
+map("n", "<Esc>j", "<C-w>j", default_opts)
+map("n", "<Esc>l", "<C-w>l", default_opts)
 
 
 -- Navigation
@@ -41,13 +46,18 @@ map('n', '<leader>ff', telescope.find_files, default_opts)
 map('n', '<leader>fg', telescope.live_grep, default_opts)
 map('n', '<leader>fh', telescope.help_tags, default_opts)
 
-map('n', '<F3>', ':vsplit<CR>', default_opts)
-map('n', '<F4>', ':split<CR>', default_opts)
+map('n', 'ss', ':vsplit<CR>', default_opts)
+map('n', 'sv', ':split<CR>', default_opts)
 
 -- map('n', '<leader>;', telescope.buffers, {})
 map('n', '<F2>', ":lua require'telescope'.extensions.repo.list{pattern=[[^.hg$|^.git$]]}<CR>", default_opts)
 map("n", ";", "<cmd>lua require('memento').toggle()<CR>", default_opts)
 map('n', '<leader>;', telescope.buffers, default_opts)
+
+map("n", "<A-Left>", "<C-w><", default_opts)
+map("n", "<A-Right>", "<C-w>>", default_opts)
+map("n", "<A-Up>", "<C-w>-", default_opts)
+map("n", "<A-Down>", "<C-w>+", default_opts)
 
 
 -- Code
