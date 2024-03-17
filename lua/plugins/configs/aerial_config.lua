@@ -12,7 +12,9 @@ function M.setup()
             "Class", "Constructor", "Enum", "Function", "Interface", "Module",
             "Method", "Struct"
         },
-        icons = {}
+        icons = {},
+        open_automatic = true,
+        close_automatic_events = {'unsupported'},
     })
 end
 

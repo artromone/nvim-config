@@ -1,6 +1,20 @@
 [Desktop Entry]
-Name=Neovide
-Exec=cd ~/programming && neovide
-Icon=/opt/nvim-linux64/bin/neovide.png
-Type=Application
 Categories=Development;
+Comment[en_US]=
+Comment=
+Exec=cd ~/programming && neovide --frame=none
+GenericName[en_US]=
+GenericName=
+Icon=/opt/nvim-linux64/bin/neovide.png
+MimeType=
+Name[en_US]=Neovide
+Name=Neovide
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
