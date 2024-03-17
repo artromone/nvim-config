@@ -14,16 +14,29 @@ function M.setup()
         cmd = {"ccls"}
     }
 
-    lspconfig.jdtls.setup {
+    lspconfig.neocmake.setup {
         on_attach = function(client, bufnr) end,
-        filetypes = {"java"},
-        root_dir = lspconfig.util.root_pattern("pom.xml", "gradle.build",
-                                               ".git", ".hg"),
-        cmd = {
-            "/home/art/programming/.libs/jdtls/bin/jdtls", "-data",
-            current_directory, "--add-modules=ALL-SYSTEM", "--java-debug=5005"
+        filetypes = {"cmake"},
+        root_dir = lspconfig.util.root_pattern("compile_commands.json",
+                                               "CMakeLists.txt", ".git", ".hg"),
+        cmd = {"neocmakelsp", "--stdio"},
+        single_file_support = true, -- suggested
+        init_options = {
+            format = {enable = true},
+            scan_cmake_in_package = true -- default is true
         }
     }
+
+    -- lspconfig.jdtls.setup {
+    --     on_attach = function(client, bufnr) end,
+    --     filetypes = {"java"},
+    --     root_dir = lspconfig.util.root_pattern("pom.xml", "gradle.build",
+    --                                            ".git", ".hg"),
+    --     cmd = {
+    --         "/home/art/programming/.libs/jdtls/bin/jdtls", "-data",
+    --         current_directory, "--add-modules=ALL-SYSTEM", "--java-debug=5005"
+    --     }
+    -- }
 
     lspconfig.pylsp.setup {
         on_attach = function(client, bufnr) end,
