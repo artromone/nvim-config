@@ -53,8 +53,8 @@ map('n', '<leader>;', telescope.buffers, default_opts)
 -- Code
 map('i', '<C-Space>', 'v:lua.require"cmp".complete()', default_opts)
 
-map('n', '<C-s>', ':w<CR>',  default_opts)
-map('i', '<C-s>', '<esc><CR>:w<CR>', default_opts)
+map('n', '<C-s>', ':w!<CR>',  default_opts)
+map('i', '<C-s>', '<esc><CR>:w!<CR>', default_opts)
 map('n', '<Leader>f', ':w!<CR>:FormatWrite<CR>', default_opts)
 
 

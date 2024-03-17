@@ -52,7 +52,8 @@ local other_opt_settings = {
 }
 local other_g_settings = {
     mapleader = ' ', -- Set mapleader symbol
-    cmp_autocmd_event = '' -- Set autocmd event for completion (no event)
+    cmp_autocmd_event = '', -- Set autocmd event for completion (no event)
+    -- AutoPairsFlyMode = 0 -- Dont go to prev bracket
 }
 
 -- Automatic commands
