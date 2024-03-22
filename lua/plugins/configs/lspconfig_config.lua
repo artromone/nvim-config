@@ -9,16 +9,23 @@ function M.setup()
     lspconfig.ccls.setup {
         on_attach = function(client, bufnr) end,
         filetypes = {"c", "cpp", "h"},
-        root_dir = lspconfig.util.root_pattern("compile_commands.json",
-                                               "CMakeLists.txt", ".git", ".hg"),
-        cmd = {"ccls"}
+        root_dir = lspconfig.util.root_pattern(".git", ".hg"),
+        cmd = {"ccls"},
+        on_init = function(client)
+            local root_dir = lspconfig.util.root_pattern(".git", ".hg")(vim.fn.expand('%:p')) or vim.loop.cwd()
+            client.config.init_options.compilationDatabaseDirectory = root_dir .. "/build"
+            print("Compilation database directory: " .. root_dir .. "/build")
+        end,
+        init_options = {
+            -- compilationDatabaseDirectory = root_dir .. "/build",
+            cache = {directory = '/var/cache/ccls-cache', },
+        }
     }
 
     lspconfig.neocmake.setup {
         on_attach = function(client, bufnr) end,
         filetypes = {"cmake"},
-        root_dir = lspconfig.util.root_pattern("compile_commands.json",
-                                               "CMakeLists.txt", ".git", ".hg"),
+        root_dir = lspconfig.util.root_pattern("CMakeLists.txt", ".git", ".hg"),
         cmd = {"neocmakelsp", "--stdio"},
         single_file_support = true, -- suggested
         init_options = {
