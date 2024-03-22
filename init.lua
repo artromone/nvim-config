@@ -10,10 +10,10 @@ require('plugins/lazy')
 
 local plugins_configs_dir = 'plugins/configs/'
 local plugins = {   
-    -- 'dashboard-nvim_config',
+    -- -- 'dashboard-nvim_config',
     'modicator-nvim_config',
 
-    ------------'aerial_config',
+    -- ------------'aerial_config',
     'nvim-web-devicons_config',
     'nvim-tree-lua_config',
     'lualine_config',
@@ -40,8 +40,8 @@ local plugins = {
 
     'cmake-tools-nvim_config',
 
-    'nvim-dap_config',
-    'nvim-dap-ui_config',
+    -- 'nvim-dap_config',
+    -- 'nvim-dap-ui_config',
 
     'lspconfig_config',
     'fidget-nvim_config',

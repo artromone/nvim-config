@@ -1,6 +1,16 @@
 -- lualine_config.lua
 local M = {}
 
+local function get_hg_branch()
+    local handle = io.popen("hg branch 2>/dev/null")
+    local result = handle:read("*a")
+    handle:close()
+    if result then
+        return result:match("(.+)\n")
+    end
+    return nil
+end
+
 function M.setup()
     require("lualine").setup {
         options = {
@@ -15,7 +25,16 @@ function M.setup()
             refresh = {statusline = 1000, tabline = 1000, winbar = 1000}
         },
         sections = {
-            lualine_a = {"branch"},
+            lualine_a = {
+                "branch",
+                function()
+                    local branch = get_hg_branch()
+                    if branch then
+                        return branch
+                    end
+                    return ""
+                end
+            },
             lualine_b = {
                 "diff", "filename", {
                     "diagnostics",

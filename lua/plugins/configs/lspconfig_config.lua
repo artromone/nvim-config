@@ -13,12 +13,18 @@ function M.setup()
         cmd = {"ccls"},
         on_init = function(client)
             local root_dir = lspconfig.util.root_pattern(".git", ".hg")(vim.fn.expand('%:p')) or vim.loop.cwd()
+            client.config.flags.allow_incremental_sync = true
+            client.workspaceFolders = {
+                {
+                    uri = vim.uri_from_fname(root_dir),
+                    name = "ccls"
+                }
+            }
             client.config.init_options.compilationDatabaseDirectory = root_dir .. "/build"
-            print("Compilation database directory: " .. root_dir .. "/build")
+            -- print("Compilation database directory: " .. root_dir .. "/build")
         end,
         init_options = {
-            -- compilationDatabaseDirectory = root_dir .. "/build",
-            cache = {directory = '/var/cache/ccls-cache', },
+            cache = {directory = '/home/art/.cache/ccls-cache/', },
         }
     }
 

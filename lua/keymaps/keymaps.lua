@@ -49,15 +49,16 @@ map('n', '<leader>fh', telescope.help_tags, default_opts)
 map('n', 'ss', ':vsplit<CR>', default_opts)
 map('n', 'sv', ':split<CR>', default_opts)
 
--- map('n', '<leader>;', telescope.buffers, {})
 map('n', '<F2>', ":lua require'telescope'.extensions.repo.list{pattern=[[^.hg$|^.git$]]}<CR>", default_opts)
 map("n", ";", "<cmd>lua require('memento').toggle()<CR>", default_opts)
 map('n', '<leader>;', telescope.buffers, default_opts)
 
+map('n', '<leader>b', ':Arrow open<CR>', default_opts)
+
 map("n", "<A-Left>", "<C-w><", default_opts)
 map("n", "<A-Right>", "<C-w>>", default_opts)
-map("n", "<A-Up>", "<C-w>-", default_opts)
-map("n", "<A-Down>", "<C-w>+", default_opts)
+map("n", "<A-Up>", "<C-w>+", default_opts)
+map("n", "<A-Down>", "<C-w>-", default_opts)
 
 
 -- Code
