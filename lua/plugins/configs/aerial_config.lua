@@ -13,7 +13,7 @@ function M.setup()
             "Method", "Struct"
         },
         icons = {},
-        open_automatic = true,
+        -- open_automatic = true,
         close_automatic_events = {'unsupported'},
     })
 end

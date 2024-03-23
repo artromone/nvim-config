@@ -12,7 +12,8 @@ function M.setup()
             mappings = {
                 i = {["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist},
                 n = {["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist}
-            }
+            },
+            file_ignore_patterns = { ".hg", ".git" ,"build", "doc" }
         },
         extensions = {
             repo = {

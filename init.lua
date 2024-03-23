@@ -13,7 +13,7 @@ local plugins = {
     -- -- 'dashboard-nvim_config',
     'modicator-nvim_config',
 
-    -- ------------'aerial_config',
+    'aerial_config',
     'nvim-web-devicons_config',
     'nvim-tree-lua_config',
     'lualine_config',
@@ -54,6 +54,7 @@ for _, module_name in ipairs(plugins) do
     require(plugins_configs_dir .. module_name).setup()
 end
 
+vim.cmd('autocmd BufRead,BufNewFile *.qml set filetype=qml')
 
 -- theme
 require('theme/onedark').use()

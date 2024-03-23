@@ -65,6 +65,29 @@ require("lazy").setup({
     "folke/neodev.nvim", -- Signature and docs help
 
     "d86leader/vim-cpp-helper", -- Helper functions for C++ development
+    -- 'peterhoeg/vim-qml', -- QML syntax
+    -- {
+    --     'dense-analysis/ale', -- QML diagnostics
+    --     config = function()
+    --         local g = vim.g
+
+    --         g.ale_enabled = 1
+    --         g.ale_fix_on_save = 1
+    --         g.ale_sign_error = '✗'
+    --         g.ale_sign_warning = ''
+    --         g.ale_sign_column_always = 1
+    --         g.ale_completion_enabled = 1
+
+    --         g.ale_virtualtext_cursor = 1
+    --         g.ale_virtualtext_prefix = '>>'
+
+    --         -- Убедитесь, что виртуальный текст включен для QML
+    --         g.ale_virtualtext = 1
+
+    --         g.ale_linters = { qml = {'qmllint'}, python = {'flake8'} }
+    --         -- g.ale_fixers = { qml = {'qmlfmt'} }
+    --     end
+    -- },
 
     --[[Version Control Systems]]
     "lewis6991/gitsigns.nvim", -- Git signs in the gutter

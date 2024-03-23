@@ -8,7 +8,7 @@ function M.setup()
 
     lspconfig.ccls.setup {
         on_attach = function(client, bufnr) end,
-        filetypes = {"c", "cpp", "h"},
+        filetypes = {"c", "cpp", "h", --[["qml"]]},
         root_dir = lspconfig.util.root_pattern(".git", ".hg"),
         cmd = {"ccls"},
         on_init = function(client)

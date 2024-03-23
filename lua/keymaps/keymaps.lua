@@ -37,8 +37,8 @@ map("n", "<Esc>l", "<C-w>l", default_opts)
 map('n', '<C-P>', ':BufferLineCycleNext<CR>', default_opts)
 map('n', '<C-N>', ':BufferLineCyclePrev<CR>', default_opts)
 
-map('n', '<F6>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', default_opts)
-map('n', '<F8>', ':AerialToggle<CR>', default_opts)
+map('n', '<F10>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', default_opts)
+map('n', '<F11>', ':AerialToggle<CR>', default_opts)
 
 map("n", "<leader>u", "<cmd>Telescope undo<CR>", default_opts)
 
