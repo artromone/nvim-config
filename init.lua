@@ -7,7 +7,6 @@ end
 
 require('plugins/lazy')
 
-
 local plugins_configs_dir = 'plugins/configs/'
 local plugins = {   
     -- -- 'dashboard-nvim_config',
