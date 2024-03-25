@@ -41,10 +41,10 @@ local window_settings = {
 
 -- Folding settings
 local fold_settings = {
-    foldmethod = 'indent',
-    foldcolumn = '5',
-    foldlevel = 99,
-    signcolumn = 'no',
+    -- foldmethod = 'indent',
+    -- foldcolumn = '5',
+    -- foldlevel = 99,
+    -- signcolumn = 'no',
   --   fillchars = {fold = '-', foldopen = '▶', foldclose = '▼'},
 }
 

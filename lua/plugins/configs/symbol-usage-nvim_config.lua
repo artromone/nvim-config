@@ -31,7 +31,7 @@ function M.setup()
         hl = {link = 'Comment'},
         kinds = {SymbolKind.Function, SymbolKind.Method},
         kinds_filter = {},
-        vt_position = 'above',
+        vt_position = 'end_of_line',
         request_pending_text = 'loading...',
         references = {enabled = true, include_declaration = false},
         definition = {enabled = true},
