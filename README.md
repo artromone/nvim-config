@@ -1,3 +1,8 @@
+```bash
+git clone https://github.com/artromone/nvim-config ~/.config/nvim
+nvim
+```
+
 ```
 art:~/.config/nvim$ tree -L 2
 .
