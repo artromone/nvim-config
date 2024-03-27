@@ -40,6 +40,16 @@ local plugins = {
     'mini-nvim_config',
     'neodev_config', -- must be done before lsp!
 
+
+
+
+
+
+
+    'noice_config',
+
+    
+
     'vim-cpp-helper-vim_config',
 
     'gitsigns-nvim_config',
